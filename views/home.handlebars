@@ -1,0 +1,14 @@
+<h1>All Blogs</h1>
+<h4>Showing {{nBlogs}} of {{tBlogs}} blogs</h4>
+<hr>
+
+{{#each result}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{this.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.snippet}}</h6>
+            <a href="/view-blog?id={{this.blogId}}">View</a>
+        </div>
+    </div>
+    <br>
+{{/each}}

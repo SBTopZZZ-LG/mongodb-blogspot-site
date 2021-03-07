@@ -1,0 +1,27 @@
+<h1>Create a Blog</h1>
+<hr>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="_blogTitle" placeholder="My blog">
+  <label for="floatingInput">Blog title</label>
+</div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="_blogSnippet" placeholder="About my blog">
+  <label for="floatingInput">Blog snippet</label>
+</div>
+<br>
+<div class="form-floating">
+  <textarea class="form-control" placeholder="Leave a comment here" id="_blogBody" style="height: 200px"></textarea>
+  <label for="floatingTextarea2">Blog body</label>
+</div>
+<br>
+<button type="button" id="_createBlogButton" class="btn btn-primary" onclick="submitBlog()">Submit blog</button>
+
+<script>
+    function submitBlog() {
+        var title = escape(document.getElementById("_blogTitle").value);
+        var snippet = escape(document.getElementById("_blogSnippet").value);
+        var body = escape(document.getElementById("_blogBody").value);
+
+        location.href = "http://localhost:8080/add-blog?" + ["title="+title, "snippet="+snippet, "body="+body].join("&");
+    }
+</script>
