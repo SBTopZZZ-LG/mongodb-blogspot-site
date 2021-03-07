@@ -18,9 +18,9 @@
 
 <script>
     function submitBlog() {
-        var title = escape(document.getElementById("_blogTitle").value);
-        var snippet = escape(document.getElementById("_blogSnippet").value);
-        var body = escape(document.getElementById("_blogBody").value);
+        var title = document.getElementById("_blogTitle").value;
+        var snippet = document.getElementById("_blogSnippet").value;
+        var body = document.getElementById("_blogBody").value;
 
         location.href = "http://localhost:8080/add-blog?" + ["title="+title, "snippet="+snippet, "body="+body].join("&");
     }

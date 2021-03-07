@@ -98,7 +98,7 @@ app.get('/', function (req, res) {
 app.get("/add-blog", function(req, res) {
     var newQuery = req.query;
     if (newQuery.title != null && newQuery.snippet != null && newQuery.body != null) {
-        submitNewBlog(unescape(newQuery.title), unescape(newQuery.snippet), unescape(newQuery.body));
+        submitNewBlog(newQuery.title, newQuery.snippet, newQuery.body);
         res.redirect("/");
     } else
         res.render("createBlog");
